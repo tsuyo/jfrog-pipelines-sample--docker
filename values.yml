@@ -8,12 +8,14 @@ gitRepo:
   # branch: master
 artifactoryRepo:
   target:
+    # this should be a local repo, not a virtual one
     name: sample-docker-local
   username: admin
 docker:
   image:
+    resourceName: sample_docker__sample_hello_app
     name: platform.tsuyo.org/sample-docker/sample-hello-app
-    # tag: latest
+    tag: latest
   file:
     location: .
     name: Dockerfile

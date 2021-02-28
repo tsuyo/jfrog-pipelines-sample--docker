@@ -10,14 +10,14 @@ resources:
       # branches:
       #   include: {{ .Values.myRepo.branch }}
 
-  # - name: dbp_image
-  #   type: Image
-  #   configuration:
-  #     registry: {{ .Values.myArtifactory.name }}
-  #     sourceRepository: {{ .Values.myArtifactory.pushRepo }}
-  #     imageName: {{ .Values.docker.image.name }}
-  #     imageTag: {{ .Values.docker.image.tag }}
-  #     autoPull: true
+  - name: {{ .Values.docker.image.resourceName }}
+    type: Image
+    configuration:
+      registry: {{ .Values.artifactory }}
+      sourceRepository: {{ .Values.artifactoryRepo.target.name }}
+      imageName: {{ .Values.docker.image.name }}
+      imageTag: {{ .Values.docker.image.tag }}
+      autoPull: true
       
   - name: {{ .Values.pipelines.name }}
     type: BuildInfo
@@ -58,8 +58,8 @@ pipelines:
             - name: {{ .Values.artifactory }}
           inputSteps:
             - name: docker_build
-          # outputResources:
-          #   - name: dbp_image
+          outputResources:
+            - name: {{ .Values.docker.image.resourceName }}
 
       - name: publish_build_info
         type: PublishBuildInfo
