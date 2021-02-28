@@ -1,0 +1,19 @@
+artifactory: artifactory
+pipelines:
+  name: sample_docker
+gitRepo:
+  name: github__tsuyo__jfrog_pipelines_sample--docker
+  provider: tsuyo_github
+  path: tsuyo/jfrog-pipelines-sample--docker
+  # branch: master
+artifactoryRepo:
+  target:
+    name: sample-docker
+  username: admin
+docker:
+  image:
+    name: platform.tsuyo.org/sample-docker/sample-hello-app
+    # tag: latest
+  file:
+    location: .
+    name: Dockerfile
