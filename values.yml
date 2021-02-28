@@ -8,7 +8,7 @@ gitRepo:
   # branch: master
 artifactoryRepo:
   target:
-    name: sample-docker
+    name: sample-docker-local
   username: admin
 docker:
   image:
