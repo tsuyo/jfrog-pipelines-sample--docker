@@ -9,9 +9,7 @@ A Go source and Dockerfile are from [Hello Application example](https://github.c
   - artifactory: Artifactory
 - Repos 
   - sample-docker-local (docker/local)
-  - sample-docker-gcr (docker/remote)
-    - URL: https://gcr.io/
-  - sample-docker-hub (docker/remote)
+  - sample-docker-remote (docker/remote)
     - URL: https://registry-1.docker.io/
   - sample-docker (docker/virtual)
-    - includes: sample-docker-local, sample-docker-gcr, sample-docker-hub
+    - includes: sample-docker-local, sample-docker-remote
