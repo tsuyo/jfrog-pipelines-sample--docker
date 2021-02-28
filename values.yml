@@ -2,7 +2,7 @@ artifactory: artifactory
 pipelines:
   name: sample_docker
 gitRepo:
-  name: github__tsuyo__jfrog_pipelines_sample--docker
+  name: github__tsuyo__jfrog_pipelines_sample__docker
   provider: tsuyo_github
   path: tsuyo/jfrog-pipelines-sample--docker
   # branch: master
